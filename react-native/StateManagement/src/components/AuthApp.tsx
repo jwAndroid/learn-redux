@@ -6,12 +6,10 @@ import {
   Button,
   StyleSheet,
 } from 'react-native';
-// import { useDispatch, useSelector } from 'react-redux';
-import useAuthActions from '../hooks/useAuthActions';
-import useUser from '../hooks/useUser';
-// import { RootState } from '../slices';
-// import { RootState } from '../slices';
-// import { authorize, logout } from '../slices/auth';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { RootState } from '../slices/rootReducer';
+import { authorize, logout } from '../slices/auth';
 
 const styles = StyleSheet.create({
   block: { flex: 1 },
@@ -20,8 +18,7 @@ const styles = StyleSheet.create({
 });
 
 function AuthStatus() {
-  // const user = useSelector((state: RootState) => state.auth.user);
-  const user = useUser();
+  const user = useSelector((state: RootState) => state.auth.user);
 
   return (
     <View style={styles.status}>
@@ -33,33 +30,27 @@ function AuthStatus() {
 }
 
 function AuthButtons() {
-  // const dispatch = useDispatch();
-  const { authorize, logout } = useAuthActions();
+  const dispatch = useDispatch();
 
   const onPressLogin = useCallback(() => {
-    authorize({
-      id: 1,
-      username: 'choi-ji-woong',
-      displayName: 'jwroid',
-    });
+    dispatch(
+      authorize({
+        id: 1,
+        username: 'choi-ji-woong',
+        displayName: 'jwroid',
+      }),
+    );
+  }, [dispatch]);
 
-    // dispatch(
-    //   authorize({
-    //     id: 1,
-    //     username: 'choi-ji-woong',
-    //     displayName: 'jwroid',
-    //   }),
-    // );
-  }, [authorize]);
-
-  // const onPressLogout = useCallback(() => {
-  //   // dispatch(logout());
-  // }, []);
+  const onPressLogout = useCallback(() => {
+    dispatch(logout());
+  }, [dispatch]);
 
   return (
     <View>
       <Button title="로그인" onPress={onPressLogin} />
-      <Button title="로그아웃" onPress={logout} />
+
+      <Button title="로그아웃" onPress={onPressLogout} />
     </View>
   );
 }
@@ -68,6 +59,7 @@ function AuthApp() {
   return (
     <SafeAreaView style={styles.block}>
       <AuthStatus />
+
       <AuthButtons />
     </SafeAreaView>
   );
