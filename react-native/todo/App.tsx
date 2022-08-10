@@ -3,13 +3,19 @@
  */
 
 import React, { memo } from 'react';
-import { View, Text } from 'react-native';
+import { Provider } from 'react-redux';
+import { configureStore } from '@reduxjs/toolkit';
+
+import rootReducer from './src/redux/rootReducer';
+import TodoApp from './src/components/TodoApp';
+
+const store = configureStore({ reducer: rootReducer });
 
 function App() {
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+    <Provider store={store}>
+      <TodoApp />
+    </Provider>
   );
 }
 

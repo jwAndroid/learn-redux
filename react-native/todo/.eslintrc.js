@@ -20,6 +20,9 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'object-curly-newline': 'off',
+    'arrow-body-style': 'off',
+    'no-shadow': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
     'react/jsx-filename-extension': [
@@ -30,5 +33,7 @@ module.exports = {
     'no-undef': 'off',
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
+    'react/jsx-closing-bracket-location': 'off',
+    'no-console': 'off',
   },
 };
