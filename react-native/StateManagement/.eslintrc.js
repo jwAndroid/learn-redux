@@ -20,6 +20,7 @@ module.exports = {
   },
   plugins: ['react', '@typescript-eslint'],
   rules: {
+    'no-shadow': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/no-unused-vars': ['error'],
     'react/jsx-filename-extension': [
@@ -31,5 +32,6 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'no-param-reassign': 'off',
+    'no-console': 'off',
   },
 };
