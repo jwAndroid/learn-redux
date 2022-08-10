@@ -6,12 +6,12 @@ import {
   Button,
   StyleSheet,
 } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+// import { useDispatch, useSelector } from 'react-redux';
 import useAuthActions from '../hooks/useAuthActions';
 import useUser from '../hooks/useUser';
-import { RootState } from '../slices';
 // import { RootState } from '../slices';
-import { authorize, logout } from '../slices/auth';
+// import { RootState } from '../slices';
+// import { authorize, logout } from '../slices/auth';
 
 const styles = StyleSheet.create({
   block: { flex: 1 },
