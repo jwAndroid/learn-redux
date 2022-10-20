@@ -11,6 +11,7 @@ export const fetchPosts = createAsyncThunk(
   'posts/fetchUsers',
   getPosts,
 );
+// TODO: 이부분 이해해보기 createAsyncThunk 첫번째 인자가 이해가 안댐...
 
 interface PostsState {
   posts: {
