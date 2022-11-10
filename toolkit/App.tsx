@@ -3,14 +3,20 @@
  */
 
 import React, {memo} from 'react';
-import {View, Text, SafeAreaView} from 'react-native';
+import {Text, SafeAreaView} from 'react-native';
 
 function App() {
   return (
-    <SafeAreaView>
-      <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>App</Text>
-      </View>
+    <SafeAreaView
+      style={{
+        flex: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'orange',
+      }}>
+      <Text style={{color: 'white', fontSize: 30, fontWeight: 'bold'}}>
+        hello redux-toolkit!
+      </Text>
     </SafeAreaView>
   );
 }
