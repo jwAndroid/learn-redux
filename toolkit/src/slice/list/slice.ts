@@ -8,7 +8,7 @@ const initialState: List[] = [
     text: 'hello redux',
   },
 ];
-
+// test
 const listSlice = createSlice({
   name: 'list',
   initialState,
