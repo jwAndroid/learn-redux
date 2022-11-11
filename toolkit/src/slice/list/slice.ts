@@ -2,13 +2,8 @@ import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 import {List} from './type';
 
-const initialState: List[] = [
-  {
-    id: 1,
-    text: 'hello redux',
-  },
-];
-// test
+const initialState: List[] = [];
+
 const listSlice = createSlice({
   name: 'list',
   initialState,
