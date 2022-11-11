@@ -4,6 +4,6 @@ export interface User {
   displayName: string;
 }
 
-export interface AuthState {
+export interface InitialAuthState {
   user: User | null;
 }

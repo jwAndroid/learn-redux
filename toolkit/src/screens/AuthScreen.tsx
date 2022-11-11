@@ -54,11 +54,11 @@ function AuthScreen() {
       </View>
 
       <View style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-        <Text>{user?.id}</Text>
+        <Text>아이디: {user?.id}</Text>
 
-        <Text>{user?.username}</Text>
+        <Text>이름: {user?.username}</Text>
 
-        <Text>{user?.displayName}</Text>
+        <Text>닉네임: {user?.displayName}</Text>
       </View>
     </View>
   );
