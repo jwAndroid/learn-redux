@@ -4,6 +4,7 @@ import {List} from './type';
 
 const initialState: List[] = [];
 
+// own
 const listSlice = createSlice({
   name: 'list',
   initialState,
